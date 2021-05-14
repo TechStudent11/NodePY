@@ -34,6 +34,7 @@ def main(ctx):
 )
 @click.pass_context
 def init(ctx, name, mainscript):
+    """Initializes a project."""
     if ctx.obj.get('PROJECT_INFO'):
         raise ProjectFound('Found Project')
 
@@ -58,6 +59,7 @@ def init(ctx, name, mainscript):
 @click.argument('script_name')
 @click.pass_context
 def run(ctx, script_name):
+    """Runs a script within the project."""
     project_info = ctx.obj.get('PROJECT_INFO')
     if not project_info:
         raise ProjectNotFound('Could not find project')

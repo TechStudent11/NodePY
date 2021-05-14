@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 
-"""bootstrap.__main__: executed when bootstrap directory is called as script."""
+"""nodepy.__main__: executed when bootstrap directory is called as script."""
 
 
-from .cli import main
+from nodepy.cli import main
 main()
