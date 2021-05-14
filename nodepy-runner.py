@@ -1,4 +1,4 @@
-"""Convenience wrapper for running bootstrap directly from source tree."""
+"""Convenience wrapper for running nodepy directly from source tree."""
 
 from nodepy.cli import main
 if __name__ == '__main__':
