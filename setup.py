@@ -1,18 +1,14 @@
-# -*- coding: utf-8 -*-
-
-
 """setup.py: setuptools control."""
 
 
 import re
 from setuptools import setup
 
-
 version = re.search(
     '^__version__\s*=\s*"(.*)"',
-    open('bootstrap/bootstrap.py').read(),
+    open('nodepy/cli.py').read(),
     re.M
-    ).group(1)
+).group(1)
 
 
 with open("README.rst", "rb") as f:
@@ -20,15 +16,18 @@ with open("README.rst", "rb") as f:
 
 
 setup(
-    name = "cmdline-bootstrap",
-    packages = ["bootstrap"],
-    entry_points = {
-        "console_scripts": ['bootstrap = bootstrap.bootstrap:main']
-        },
-    version = version,
-    description = "Python command line application bare bones template.",
-    long_description = long_descr,
-    author = "Jan-Philip Gehrcke",
-    author_email = "jgehrcke@googlemail.com",
-    url = "http://gehrcke.de/2014/02/distributing-a-python-command-line-application",
-    )
+    name="nodepy",
+    packages=["nodepy"],
+    entry_points={
+        "console_scripts": ['nodepy = nodepy.cli:main']
+    },
+    version=version,
+    description="The NodeJS of Python.",
+    long_description=long_descr,
+    author="TechStudent11",
+    author_email="mohammeddam1@outlook.com",
+    url="https://github.com/TechStudent11/NodePY",
+    install_requires=[
+        'click'
+    ]
+)
